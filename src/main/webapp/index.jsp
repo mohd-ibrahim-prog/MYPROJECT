@@ -136,7 +136,7 @@
         </div>
         
         <p style="text-align: center; color: #475569; font-size: 0.8rem;">
-            Designed by Ibrahim | Powered by Jenkins & Java
+            Designed by Ibrahim | Powered by Jenkins & Java by using apache and maven git
         </p>
     </div>
 </div>
