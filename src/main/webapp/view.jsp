@@ -3,25 +3,44 @@
 <html>
 <head>
     <title>View Employees</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>Employee List</h2>
+<div class="navbar">Employee List</div>
+
+<div class="container">
+
+<table>
+<tr>
+    <th>Name</th>
+    <th>ID</th>
+    <th>Dept</th>
+    <th>Salary</th>
+</tr>
 
 <%
 List<String> empList = (List<String>) application.getAttribute("empList");
 
 if(empList != null){
     for(String emp : empList){
-        out.println("<p>" + emp + "</p>");
+        String[] data = emp.split(",");
+%>
+<tr>
+    <td><%=data[0]%></td>
+    <td><%=data[1]%></td>
+    <td><%=data[2]%></td>
+    <td><%=data[3]%></td>
+</tr>
+<%
     }
-}else{
-    out.println("<p>No employees found</p>");
 }
 %>
 
-<br>
-<a href="index.jsp">Back</a>
+</table>
+
+</div>
 
 </body>
 </html>

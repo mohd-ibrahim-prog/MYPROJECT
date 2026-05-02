@@ -3,18 +3,23 @@
 <html>
 <head>
     <title>Add Employee</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<h2>Add Employee</h2>
+<div class="navbar">Add Employee</div>
+
+<div class="container">
+<div class="card">
 
 <form method="post">
-    Name: <input type="text" name="name"><br><br>
-    ID: <input type="text" name="id"><br><br>
-    Department: <input type="text" name="dept"><br><br>
-    Salary: <input type="text" name="salary"><br><br>
+    <input type="text" name="name" placeholder="Name">
+    <input type="text" name="id" placeholder="ID">
+    <input type="text" name="dept" placeholder="Department">
+    <input type="text" name="salary" placeholder="Salary">
 
-    <input type="submit" value="Add">
+    <button type="submit">Add</button>
 </form>
 
 <%
@@ -31,16 +36,16 @@ if(name != null){
     String dept = request.getParameter("dept");
     String salary = request.getParameter("salary");
 
-    empList.add(name + " | " + id + " | " + dept + " | " + salary);
+    empList.add(name + "," + id + "," + dept + "," + salary);
 
     application.setAttribute("empList", empList);
 
-    out.println("<p>Employee Added!</p>");
+    out.println("<p style='color:green;'>Employee Added!</p>");
 }
 %>
 
-<br>
-<a href="index.jsp">Back</a>
+</div>
+</div>
 
 </body>
 </html>
