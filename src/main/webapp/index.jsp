@@ -77,7 +77,7 @@
 
 <body>
 
-<h1>🚀 Employee Management System</h1>
+<h1>🚀 Employee Management Resources</h1>
 
 <div class="container">
     <input type="text" id="name" placeholder="Enter Name"><br>
