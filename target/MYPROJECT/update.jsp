@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add Employee - TechCorp HRMS</title>
+    <title>Update Employee - TechCorp HRMS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -20,7 +20,7 @@
             <div class="nav-links">
                 <a href="dashboard.jsp"><i class="fas fa-home"></i> Home</a>
                 <a href="view.jsp"><i class="fas fa-list"></i> Employees</a>
-                <a href="add.jsp" class="active"><i class="fas fa-user-plus"></i> Add</a>
+                <a href="add.jsp"><i class="fas fa-user-plus"></i> Add</a>
             </div>
 
             <div class="user-info">
@@ -40,8 +40,8 @@
         <ul class="nav-menu">
             <li><a href="dashboard.jsp"><i class="fas fa-tachometer-alt"></i> <span>Dashboard</span></a></li>
             <li><a href="view.jsp"><i class="fas fa-list-ul"></i> <span>View Employees</span></a></li>
-            <li><a href="add.jsp" class="active"><i class="fas fa-user-plus"></i> <span>Add Employee</span></a></li>
-            <li><a href="update.jsp"><i class="fas fa-edit"></i> <span>Update Employee</span></a></li>
+            <li><a href="add.jsp"><i class="fas fa-user-plus"></i> <span>Add Employee</span></a></li>
+            <li><a href="update.jsp" class="active"><i class="fas fa-edit"></i> <span>Update Employee</span></a></li>
             <li><a href="delete.jsp"><i class="fas fa-trash"></i> <span>Delete Employee</span></a></li>
             <li><a href="about.jsp"><i class="fas fa-info-circle"></i> <span>About Project</span></a></li>
         </ul>
@@ -53,12 +53,12 @@
             <div style="max-width: 800px; margin: 0 auto;">
                 <!-- Page Header -->
                 <div class="card" style="margin-bottom: 30px;">
-                    <h1 style="font-size: 2rem; margin-bottom: 8px;">Add New Employee</h1>
-                    <p style="color: var(--text-secondary);">Enter employee details below</p>
+                    <h1 style="font-size: 2rem; margin-bottom: 8px;">Update Employee</h1>
+                    <p style="color: var(--text-secondary);">Modify existing employee information</p>
                 </div>
 
                 <div class="card">
-                    <form action="view.jsp" method="post" id="addEmployeeForm">
+                    <form action="view.jsp" method="post" id="updateEmployeeForm">
                         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
                             <!-- Personal Information -->
                             <div>
@@ -66,27 +66,27 @@
                                 
                                 <div class="form-group">
                                     <label for="fullName">Full Name <span style="color: #ef4444;">*</span></label>
-                                    <input type="text" id="fullName" name="fullName" class="form-control" required>
+                                    <input type="text" id="fullName" name="fullName" value="Rahul Sharma" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="employeeId">Employee ID <span style="color: #ef4444;">*</span></label>
-                                    <input type="text" id="employeeId" name="employeeId" class="form-control" required>
+                                    <label for="employeeId">Employee ID</label>
+                                    <input type="text" id="employeeId" name="employeeId" value="EMP001" class="form-control" readonly>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="email">Email Address <span style="color: #ef4444;">*</span></label>
-                                    <input type="email" id="email" name="email" class="form-control" required>
+                                    <input type="email" id="email" name="email" value="rahul.sharma@techcorp.com" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="phone">Phone Number <span style="color: #ef4444;">*</span></label>
-                                    <input type="tel" id="phone" name="phone" class="form-control" required>
+                                    <input type="tel" id="phone" name="phone" value="+91 98765 43210" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="dob">Date of Birth</label>
-                                    <input type="date" id="dob" name="dob" class="form-control">
+                                    <input type="date" id="dob" name="dob" value="1995-08-15" class="form-control">
                                 </div>
                             </div>
 
@@ -97,35 +97,33 @@
                                 <div class="form-group">
                                     <label for="department">Department <span style="color: #ef4444;">*</span></label>
                                     <select id="department" name="department" class="form-control" required>
-                                        <option value="">Select Department</option>
-                                        <option value="Engineering">Engineering</option>
+                                        <option value="Engineering" selected>Engineering</option>
                                         <option value="Human Resources">Human Resources</option>
                                         <option value="Finance">Finance</option>
                                         <option value="Marketing">Marketing</option>
                                         <option value="Operations">Operations</option>
-                                        <option value="IT">Information Technology</option>
                                     </select>
                                 </div>
 
                                 <div class="form-group">
                                     <label for="designation">Designation <span style="color: #ef4444;">*</span></label>
-                                    <input type="text" id="designation" name="designation" class="form-control" required placeholder="e.g. Software Engineer">
+                                    <input type="text" id="designation" name="designation" value="Senior Software Engineer" class="form-control" required>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="joinDate">Joining Date <span style="color: #ef4444;">*</span></label>
-                                    <input type="date" id="joinDate" name="joinDate" class="form-control" required>
+                                    <label for="joinDate">Joining Date</label>
+                                    <input type="date" id="joinDate" name="joinDate" value="2022-03-10" class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="salary">Annual Salary (₹)</label>
-                                    <input type="number" id="salary" name="salary" class="form-control" placeholder="800000">
+                                    <input type="number" id="salary" name="salary" value="1250000" class="form-control">
                                 </div>
 
                                 <div class="form-group">
                                     <label for="status">Employment Status</label>
                                     <select id="status" name="status" class="form-control">
-                                        <option value="Active">Active</option>
+                                        <option value="Active" selected>Active</option>
                                         <option value="On Leave">On Leave</option>
                                         <option value="Probation">Probation</option>
                                     </select>
@@ -133,17 +131,16 @@
                             </div>
                         </div>
 
-                        <!-- Address -->
                         <div class="form-group" style="margin-top: 30px;">
                             <label for="address">Current Address</label>
-                            <textarea id="address" name="address" class="form-control" rows="3" placeholder="Full residential address..."></textarea>
+                            <textarea id="address" name="address" class="form-control" rows="3">Flat 402, Sunshine Apartments, MG Road, Bangalore, Karnataka - 560001</textarea>
                         </div>
 
                         <!-- Action Buttons -->
                         <div style="margin-top: 40px; display: flex; gap: 16px; justify-content: flex-end;">
-                            <a href="dashboard.jsp" class="btn btn-outline">Cancel</a>
-                            <button type="submit" class="btn btn-success">
-                                <i class="fas fa-save"></i> Save Employee
+                            <a href="view.jsp" class="btn btn-outline">Cancel</a>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-save"></i> Update Employee
                             </button>
                         </div>
                     </form>
@@ -161,15 +158,8 @@
 
     <script src="script.js"></script>
     <script>
-        // Additional validation for Add Employee page
-        document.getElementById('addEmployeeForm').addEventListener('submit', function(e) {
-            const employeeId = document.getElementById('employeeId').value;
-            if (employeeId.length < 4) {
-                e.preventDefault();
-                window.showToast('Employee ID must be at least 4 characters long.', 'error');
-            } else {
-                window.showToast('Employee added successfully!', 'success');
-            }
+        document.getElementById('updateEmployeeForm').addEventListener('submit', function(e) {
+            window.showToast('Employee details updated successfully!', 'success');
         });
     </script>
 </body>
